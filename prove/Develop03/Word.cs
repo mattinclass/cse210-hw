@@ -6,12 +6,11 @@ namespace Develop03
     public class Word
     {
         // A word represents the variables and methods that occur to a single word.
-        private bool _wordIsActive;
+        private bool _wordIsActive =true;
         public string theWord;
         private char[] characters;
         private int characterCount = 0;
         
-        private string blankSpace = "_";
 
         
 
@@ -29,6 +28,7 @@ namespace Develop03
                 int hideNumber = numberGenerator.Next(0,characterCount - 1);
 
                 myWordList[hideNumber].theWord = "____";
+                word.DeactivateWord(false);
             }
             
 
@@ -37,6 +37,28 @@ namespace Develop03
 
             return myWordList;
         }
-        
+        public void DeactivateWord(bool isActive)
+        {
+            _wordIsActive = isActive;
+        }
+        public bool GetStatus()
+        {
+            return _wordIsActive;
+        }
+
+       public Word ConvertToUnderscore(Word word)
+        {
+            Word convertedWord = new Word();
+            convertedWord.theWord = string.Empty;
+            
+
+            foreach (char letter in word.theWord)
+            {
+                
+                convertedWord.theWord += "_";
+            }
+            word.DeactivateWord(false);
+            return convertedWord;
+        }
     }
 }

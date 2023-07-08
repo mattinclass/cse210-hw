@@ -18,15 +18,15 @@ namespace Develop03
 
             if (_referenceNumber == 0)
             {
-                chosenReference = "John 13:14";
+                chosenReference = "John 13:34";
             }
             if (_referenceNumber == 1)
             {
-                chosenReference = "Mike 22";
+                chosenReference = "Matthew 11:28-30";
             }
             if (_referenceNumber == 2)
             {
-                chosenReference = "Tony 22";
+                chosenReference = "John 14:15";
             }
 
             return chosenReference;
